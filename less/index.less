@@ -50,10 +50,182 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
 }
 
+html{
+	font-size:62.5%;
+}
 html, body {
     height: 100%;
 }
 
+h1 {
+	font-size: 6rem;
+}
+h2{
+	font-size: 3rem;
+}
+
+p{
+	font-size: 2rem;
+}
+footer{
+	font-size: 1.3rem;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+@main-font: 'Roboto Mono', monospace;
+@main-color: coral;
+@font-color: black;
+
+.bordered(){
+border: 1px dashed @main-color;
+}
+.center(){
+	display:flex;
+	justify-content: center;
+}
+
+body{
+	font-family: @main-font;
+	color: @font-color;
+}
+
+.container {
+	max-width: 100%;
+	margin: auto;
+} // this ends container styling
+
+header {
+	display: flex;
+	justify-content: flex-end;
+	color: @font-color;
+
+	nav {
+		text-decoration: none;
+		padding: 2%;
+		margin-right: 12%;
+		display: flex;
+		justify-content: space-evenly;
+
+		@media( max-width: 500px ) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+		  }	// ends media query
+
+		a {
+			margin: 0 5%;
+			padding: 0;
+			text-decoration: none;
+			font-size: 2rem;
+		} // this ends a styling
+	} // this ends nav styling
+} // this ends header styling
+
+.top-content {
+	width: 80%;
+	box-sizing: border-box;
+	background: @main-color;
+	margin-left: 10%;
+	padding: 5%;
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+
+} // this ends top content styling
+
+.middle-content{
+	width: 80%;
+	margin-left: 10%;
+	padding: 2%;
+	display:flex;
+	justify-content: space-between;
+
+	@media( max-width: 500px ) {
+		display: flex;
+		flex-direction: column;
+	  }	// ends media query
+		.about{
+			width: 50%;
+			margin: 2%;
+
+			@media( max-width: 500px ) {
+				width: 100%;
+			  }	// ends media query
+		}
+		.skills{
+			width: 50%;
+			margin: 2%;
+			display:flex;
+			flex-direction: column;
+			box-sizing: border-box;
+			
+			@media( max-width: 500px ) {
+				width: 100%;
+			  }	// ends media query
+
+			a{
+				font-size: 1.4rem;
+				display: flex;
+				flex-direction: column;
+				box-sizing: border-box;
+				padding: 2%;
+				.bordered();
+			}
+		}
+} // this ends middle content styling
+
+.bottom-content{
+	width:80%;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	table.minimalistBlack {
+		border: 3px solid @main-color;
+		width: 100%;
+		height:30%;
+		text-align: left;
+		border-collapse: collapse;
+	  }
+	  table.minimalistBlack td, table.minimalistBlack th {
+		border: 1px solid @main-color;
+		padding: 5px 4px;
+	  }
+	  table.minimalistBlack tbody td {
+		font-size: 13px;
+	  }
+	  table.minimalistBlack thead {
+		background: #CFCFCF;
+		background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+		background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+		background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+		border-bottom: 3px solid @main-color;
+	  }
+	  table.minimalistBlack thead th {
+		font-size: 15px;
+		font-weight: bold;
+		color: black;
+		text-align: left;
+	  }
+	  table.minimalistBlack tfoot td {
+		font-size: 1.4rem;
+	  }
+	  h2{
+		  text-align: center;
+	  }
+} // this ends bottom content styling
+
+footer {
+	box-sizing:border-box;
+	background: @main-color;
+	padding:2%;
+	width:80%;
+	height: 5%;
+	font-size: 1.4rem;
+	margin-left:10%;
+	.center();
+
+}
